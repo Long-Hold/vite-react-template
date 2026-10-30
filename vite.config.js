@@ -6,6 +6,8 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
   test: {
+    globals: true,
     environment: 'jsdom',
+    setupFiles: './src/tests/setup.js',
   },
 });
